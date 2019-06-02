@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+ <head>
+ <title>First app</title>
+ 	<link rel='stylesheet' href='{{ url_for("static", filename="style.css")}}'>
+ </head>
+ <body>
+ <div>Hi, this is my first Flask web app!</div>
+ {% from "_formhelpers.html" import render_field %}
+ <div>Type name here</div>
+ <form method=post action="/hello">
+ 	<dl> {{render_field(form.sayhello)}}</dl>
+ <input type=submit value='Say Hello' name='submit_btn'>
+ </form>
+ </body>
+</html>
